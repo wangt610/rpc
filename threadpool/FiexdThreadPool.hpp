@@ -52,10 +52,18 @@ class FixedThreadPool {
         std::call_once(flag,[this]{stop();});
     }
     void AddTask(const task& t){
-            taskqueue.Put(t);
+            if(taskqueue.Put(t)!=0){
+                t();
+            }
     }
     void AddTask(task&& t){
-            taskqueue.Put(std::forward<task>(t));
+            if(taskqueue.Put(std::forward<task>(t))!=0){
+                t();
+            }
     }
+    // template<class Func , class ...Args>
+    // void Addtask(Func&&func,Args... args){
+           
+    // }
 };
 #endif

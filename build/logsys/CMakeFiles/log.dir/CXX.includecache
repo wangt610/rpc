@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../logsys/include/LogCommon.hpp
+Timestamp.hpp
+../logsys/include/Timestamp.hpp
+
+../logsys/include/LogMessage.hpp
+LogCommon.hpp
+../logsys/include/LogCommon.hpp
+sstream
+-
+
+../logsys/include/Logger.hpp
+functional
+-
+LogMessage.hpp
+../logsys/include/LogMessage.hpp
+
+../logsys/include/Timestamp.hpp
+stdint.h
+-
+iostream
+-
+string
+-
+sys/time.h
+-
+
+/home/wangt/demo/rpc/logsys/src/Logger.cpp
+Logger.hpp
+/home/wangt/demo/rpc/logsys/src/Logger.hpp
+

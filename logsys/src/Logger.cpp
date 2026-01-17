@@ -62,7 +62,7 @@ namespace wangt
 
     void defaultFlush()
     {
-        //fflush(stdout);
+        fflush(stdout);
     }
     Logger::Outputfunc Logger::output_ = defaultOutput;
     Logger::Flushfunc Logger::flush_ = defaultFlush;

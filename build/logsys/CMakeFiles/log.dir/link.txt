@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/liblog.a  CMakeFiles/log.dir/src/AppendFile.cpp.o CMakeFiles/log.dir/src/AsyncLogging.cpp.o CMakeFiles/log.dir/src/LogFile.cpp.o CMakeFiles/log.dir/src/LogMessage.cpp.o CMakeFiles/log.dir/src/Logger.cpp.o CMakeFiles/log.dir/src/Timestamp.cpp.o
+/usr/bin/ranlib ../../lib/liblog.a

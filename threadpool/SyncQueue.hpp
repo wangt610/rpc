@@ -18,7 +18,7 @@ class SyncQueue {
     int maxTaskCount;
     bool stop;
     bool IsFull() const {
-        bool full=queue.size() > maxTaskCount;
+        bool full=queue.size() >= maxTaskCount;
         if(full){
             std::cout<<"SyncQueue is full!"<<std::endl;
             return true;
@@ -34,12 +34,13 @@ class SyncQueue {
         return false;
     }
     template<typename F>
-    void Add(F&& task){
+    int Add(F&& task){
         std::unique_lock<std::mutex> lock(mtx);
         notFull.wait(lock,[this](){return !IsFull() || stop;});
-        if(stop) return;
+        if(stop) return 2;
         queue.push_back(std::forward<F>(task));
         notEmpty.notify_one();
+        return 0;
     }
     // Member variables and methods
     public:
@@ -47,16 +48,16 @@ class SyncQueue {
     ~SyncQueue(){
         Stop();
     }
-    void Put(const T& task){
-        Add(task);
+    int Put(const T& task){
+        return Add(task);
     }
-    void Put(T&& task){
-        Add(std::forward<T>(task));
+    int Put(T&& task){
+        return Add(std::forward<T>(task));
     }
     void Take(std::list<T>& tasks){
         std::unique_lock<std::mutex> lock(mtx);
         notEmpty.wait(lock,[this](){return !IsEmpty() || stop;});
-        if(stop) return;
+        if(stop) return ;
         tasks=std::move(queue);
         queue.clear();
         notFull.notify_all();

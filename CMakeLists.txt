@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.0)
+project(demo)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+include_directories(${PROJECT_SOURCE_DIR}/threadpool)
+include_directories(${PROJECT_SOURCE_DIR}/logsys/include)
+
+#add_subdirectory(mprpc)
+#add_subdirectory(threadpool)
+add_subdirectory(logsys)
+add_executable(main main.cpp)
+target_link_libraries(main -lpthread log)

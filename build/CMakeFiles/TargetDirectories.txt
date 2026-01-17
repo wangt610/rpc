@@ -1,0 +1,6 @@
+/home/wangt/demo/rpc/build/CMakeFiles/rebuild_cache.dir
+/home/wangt/demo/rpc/build/CMakeFiles/edit_cache.dir
+/home/wangt/demo/rpc/build/CMakeFiles/main.dir
+/home/wangt/demo/rpc/build/logsys/CMakeFiles/rebuild_cache.dir
+/home/wangt/demo/rpc/build/logsys/CMakeFiles/edit_cache.dir
+/home/wangt/demo/rpc/build/logsys/CMakeFiles/log.dir
