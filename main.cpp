@@ -21,5 +21,12 @@ int main(){
         pool.AddTask(std::bind(fun,i));
     }
     while(1);
+
+//      MprpcApplication::Init(argc,argv);
+//    // LOG_INFO<<"MAIN.CPP";
+//     RpcProvider provider;
+//     provider.NotifyService(new UserService());
+//     provider.Run();
+    return 0;
     return 0;
 }
