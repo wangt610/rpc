@@ -17,6 +17,16 @@ MprpcApplication& MprpcApplication::GetInstance() {
     }
     return *m_instance;
 }
+// 辅助函数：去除字符串首尾空格（内部使用）
+void Trim(std::string& s) {
+    size_t start = s.find_first_not_of(" \t\r\n");
+    if (start == std::string::npos) {
+        s = "";
+        return;
+    }
+    size_t end = s.find_last_not_of(" \t\r\n");
+    s = s.substr(start, end - start + 1);
+}
 
 // 2. 框架初始化核心逻辑
 void MprpcApplication::Init(int argc, char** argv) {
@@ -90,17 +100,6 @@ void MprpcApplication::LoadConfigFile(const std::string& config_file) {
     }
 
     fclose(fp);
-}
-
-// 辅助函数：去除字符串首尾空格（内部使用）
-void Trim(std::string& s) {
-    size_t start = s.find_first_not_of(" \t\r\n");
-    if (start == std::string::npos) {
-        s = "";
-        return;
-    }
-    size_t end = s.find_last_not_of(" \t\r\n");
-    s = s.substr(start, end - start + 1);
 }
 
 // 3. 通用配置获取

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libcaller.a  CMakeFiles/caller.dir/rpc/mprpcapplication.cpp.o CMakeFiles/caller.dir/rpc/rpcheader.pb.cc.o CMakeFiles/caller.dir/rpc/zookeeperutil.cpp.o
+/usr/bin/ranlib ../../lib/libcaller.a

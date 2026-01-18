@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../mprpc/include/mprpcapplication.hpp
+iostream
+-
+string
+-
+unordered_map
+-
+mutex
+-
+
+/home/wangt/demo/rpc/mprpc/rpc/mprpcapplication.cpp
+mprpcapplication.hpp
+/home/wangt/demo/rpc/mprpc/rpc/mprpcapplication.hpp
+unistd.h
+-
+string.h
+-
+sstream
+-
+
